@@ -1,0 +1,39 @@
+﻿@model Fitcard.Web.Models.Categoria
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar Categoria</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.CAT_ID)
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.CAT_NOME,"Categoria", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.CAT_NOME, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CAT_NOME, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div col-md-10">
+                <a href="@Url.Action("Index", "Categoria") " class="btn btn-primary">
+                    Voltar
+                </a>
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </div>
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

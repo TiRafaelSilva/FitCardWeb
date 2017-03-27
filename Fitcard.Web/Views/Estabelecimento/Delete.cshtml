@@ -1,0 +1,80 @@
+﻿@model Fitcard.Web.Models.Estabelecimento
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Estabelecimento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.CAT_NOME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.CAT_NOME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EST_NOME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EST_NOME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EST_NOME_FANTASIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EST_NOME_FANTASIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EST_CNPJ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EST_CNPJ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EST_EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EST_EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EST_TELEFONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EST_TELEFONE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EST_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EST_STATUS)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
